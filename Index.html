@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manviya Rawat — I make maths hands-on | IIT Gandhinagar</title>
+<meta name="description" content="Manviya Rawat takes mathematics into classrooms as a Program Assistant at the Centre for Creative Learning, IIT Gandhinagar.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manviya Rawat — I make maths hands-on">
+<meta property="og:description" content="Mathematics education, school programmes and alumni outreach at IIT Gandhinagar.">
+<meta property="og:image" content="manviya-profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbfaf6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf6;--bg2:#f2f0e8;--ink:#16213a;--mute:#6f7484;--body:#454b5c;--line:rgba(22,33,58,.12);--acc:#2b59c3;--hi:#ffd54a;--coral:#e2603f;--mint:#e2efe8;--green:#1f6b52;--hand:'Caveat',cursive;--serif:'Fraunces',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+em{font-style:italic;color:var(--acc)}
+.kick{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 6vw}
+.hl{background:linear-gradient(transparent 62%,var(--hi) 62%,var(--hi) 92%,transparent 92%) no-repeat 0 0/0% 100%;transition:background-size 1.1s cubic-bezier(.19,1,.22,1) .9s}
+body.ready .hl{background-size:100% 100%}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 6vw;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(251,250,246,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:16px 6vw;border-color:var(--line)}
+nav .logo{font-family:var(--serif);font-size:22px;font-weight:500}
+nav .logo span{color:var(--coral)}
+nav .links{display:flex;gap:34px;font-size:14px;font-weight:400}
+nav .links a{position:relative}
+nav .links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--ink);transition:width .3s}
+nav .links a:hover::after{width:100%}
+@media(max-width:700px){nav .links a:not(.cv){display:none}}
+
+/* Hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden}
+#plot{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:manipulation}
+.hero-copy{position:absolute;left:6vw;bottom:12vh;pointer-events:none}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10.5vw,164px);line-height:.98;letter-spacing:-.025em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(110%);transition:transform 1.2s cubic-bezier(.19,1,.22,1)}
+body.ready .hero h1 .ln>span{transform:none}
+body.ready .hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+.hero .kick{margin-bottom:28px}
+.hint{margin-top:26px;font-family:var(--hand);font-size:23px;color:var(--coral);transform:rotate(-1.5deg);transform-origin:left;max-width:40ch}
+.hero-meta{position:absolute;right:6vw;bottom:12vh;text-align:right;font-family:var(--hand);font-size:21px;color:var(--mute);pointer-events:none}
+.hero-meta b{display:block;font-family:var(--serif);font-size:44px;color:var(--ink);font-weight:400}
+
+/* Story */
+.story{padding:22vh 0 18vh}
+.story-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:6vw;align-items:center}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+.lit{font-family:var(--serif);font-size:clamp(28px,3.5vw,50px);line-height:1.28;margin-top:26px}
+.lit span{opacity:.15;transition:opacity .3s}
+.lit span.on{opacity:1}
+.lit .n{color:var(--acc);font-weight:500}
+.portrait{border-radius:6px;overflow:hidden;aspect-ratio:4/5;position:relative;background:var(--bg2) linear-gradient(rgba(43,89,195,.08) 1px,transparent 1px) 0 0/28px 28px,var(--bg2) linear-gradient(90deg,rgba(43,89,195,.08) 1px,transparent 1px) 0 0/28px 28px}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s}
+.portrait:hover img{transform:scale(1.04)}
+.portrait.noimg img{display:none}
+.portrait.noimg::after{content:"MR";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:120px;color:var(--acc)}
+.cap{margin-top:14px;font-family:var(--hand);font-size:21px;color:var(--mute);transform:rotate(-1deg)}
+
+/* Horizontal work cards */
+.hz{position:relative;border-top:1px solid var(--line)}
+.hz-in{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hz-head{padding:0 6vw;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:5vh;flex-wrap:wrap}
+.hz-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.05;margin-top:12px}
+.hz-count{font-family:var(--serif);font-size:22px;color:var(--mute);font-variant-numeric:tabular-nums}
+.hz-count b{color:var(--ink);font-weight:500}
+.track{display:flex;gap:2.4vw;padding:0 6vw;will-change:transform}
+.cardx{flex:0 0 min(60vw,720px);height:min(62vh,560px);border-radius:16px;padding:42px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.cardx .bgword{position:absolute;right:-.04em;bottom:-.2em;font-family:var(--serif);font-style:italic;font-size:clamp(130px,17vw,260px);line-height:1;opacity:.09;pointer-events:none}
+.cardx .top{display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;position:relative}
+.cardx h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,50px);line-height:1.08;max-width:15ch;margin-top:18px;position:relative}
+.cardx .bottom{display:flex;gap:40px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;position:relative}
+.cardx .stat{font-family:var(--serif);font-weight:400;font-size:clamp(54px,6vw,96px);line-height:.95}
+.cardx .stat.sm{font-size:clamp(40px,4.4vw,68px)}
+.cardx .statl{font-size:14px;opacity:.75;margin-top:8px;max-width:22ch}
+.cardx p{max-width:36ch;line-height:1.7;font-size:15.5px;opacity:.88}
+.c-blue{background:var(--acc);color:#fff}.c-blue .stat{color:var(--hi)}
+.c-paper{background:#fff;border:1px solid var(--line)}.c-paper .stat{color:var(--acc)}
+.c-yellow{background:#ffe48a}.c-yellow .stat{color:#b23f22}
+.c-mint{background:var(--mint)}.c-mint .stat{color:var(--green)}
+.c-coral{background:#f8ddd2}.c-coral .stat{color:var(--coral)}
+.c-grid{background:#fff linear-gradient(rgba(43,89,195,.08) 1px,transparent 1px) 0 0/32px 32px;border:1px solid var(--line)}
+.c-grid::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,89,195,.08) 1px,transparent 1px) 0 0/32px 32px;pointer-events:none}
+.c-grid .stat{color:var(--acc)}
+.hz-bar{margin:5vh 6vw 0;height:1px;background:var(--line);position:relative}
+.hz-bar i{position:absolute;left:0;top:-1px;height:3px;background:var(--acc);width:0}
+@media(max-width:800px){
+  .hz{height:auto!important}.hz-in{position:static;height:auto;padding:14vh 0 6vh}
+  .track{flex-direction:column;transform:none!important}.cardx{flex:none;width:auto;height:auto;min-height:460px}
+  .hz-bar,.hz-count{display:none}
+}
+
+/* Number line journey */
+.journey{padding:18vh 0 14vh;border-top:1px solid var(--line)}
+.j-head{display:grid;grid-template-columns:1.2fr 1fr;gap:6vw;align-items:end}
+@media(max-width:900px){.j-head{grid-template-columns:1fr;gap:20px}}
+.journey h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.05;margin-top:12px}
+.lead{color:var(--body);font-size:17px;line-height:1.7;max-width:44ch}
+.nl{position:relative;margin-top:8vh}
+.nl-line{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--line)}
+.nl-line::after{content:"";position:absolute;right:-2px;top:-5px;border:6px solid transparent;border-left:9px solid rgba(22,33,58,.25);border-right:0}
+.nl-line i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--acc)}
+.nl-list{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);height:440px;position:relative}
+.nl-list li{position:relative;cursor:default}
+.nl-list .dot{position:absolute;left:8px;top:50%;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid rgba(22,33,58,.35);transform:translateY(-50%);transition:background .3s,border-color .3s,transform .3s}
+.nl-list li.on .dot{background:var(--acc);border-color:var(--acc)}
+.nl-list li:hover .dot{transform:translateY(-50%) scale(1.35);background:var(--coral);border-color:var(--coral)}
+.nl-list .txt{position:absolute;left:8px;right:10px}
+.nl-list li.up .txt{bottom:calc(50% + 28px)}
+.nl-list li.down .txt{top:calc(50% + 28px)}
+.nl-list .yr{font-family:var(--serif);font-size:26px;color:var(--ink);transition:color .3s}
+.nl-list li:hover .yr{color:var(--coral)}
+.nl-list h4{font-size:14px;font-weight:500;margin-top:6px;line-height:1.35}
+.nl-list p{font-size:13.5px;color:var(--body);line-height:1.5;margin-top:4px}
+.nl-list .g{display:inline-block;margin-top:8px;font-family:var(--hand);font-size:20px;color:var(--acc)}
+.journey .note{margin-top:3vh;font-family:var(--hand);font-size:20px;color:var(--mute)}
+@media(max-width:1000px){.nl-list p{display:none}}
+@media(max-width:800px){
+  .nl-line{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .nl-line::after{display:none}
+  .nl-line i{width:100%;height:0}
+  .nl-list{grid-template-columns:1fr;height:auto;gap:36px}
+  .nl-list li{padding-left:40px}
+  .nl-list .dot{left:0;top:6px;transform:none}
+  .nl-list li:hover .dot{transform:scale(1.25)}
+  .nl-list .txt{position:static}
+  .nl-list p{display:block}
+}
+
+/* Impact, origin, quote */
+.impact{padding:20vh 0 14vh;border-top:1px solid var(--line)}
+.impact .lit{max-width:26ch;font-size:clamp(30px,4vw,60px);line-height:1.22}
+.origin{padding:6vh 0 0;text-align:center}
+.origin p{font-family:var(--hand);font-size:24px;color:var(--mute);max-width:40ch;margin:0 auto;line-height:1.35}
+.quote{padding:8vh 0 22vh;text-align:center}
+.quote .mark{font-family:var(--serif);font-size:120px;line-height:.6;color:var(--coral);display:block}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,3.7vw,54px);line-height:1.3;max-width:24ch;margin:30px auto 0}
+.quote cite{display:inline-block;margin-top:34px;font-style:normal;font-family:var(--hand);font-size:28px;color:var(--acc);transform:rotate(-2deg)}
+
+/* Contact */
+.contact{background:var(--bg2) linear-gradient(rgba(43,89,195,.07) 1px,transparent 1px) 0 0/44px 44px;border-radius:32px 32px 0 0;border-top:1px solid var(--line);padding:20vh 0 0;overflow:hidden;position:relative}
+.contact::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,89,195,.07) 1px,transparent 1px) 0 0/44px 44px;pointer-events:none}
+.contact .wrap{position:relative}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(56px,9.5vw,150px);line-height:.98;letter-spacing:-.025em;margin-top:20px}
+.c-row{display:flex;align-items:center;gap:30px;margin-top:8vh}
+.c-row .rule{flex:1;height:1px;background:var(--line)}
+.hello{width:180px;height:180px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--hand);font-size:28px;flex-shrink:0;transition:transform .35s cubic-bezier(.19,1,.22,1),background .3s}
+.hello:hover{background:var(--coral)}
+.c-links{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10vh;border-top:1px solid var(--line)}
+.c-links a{padding:30px 20px 30px 0;border-bottom:1px solid var(--line);display:block}
+.c-links a small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.c-links a span{font-size:16px;word-break:break-word;transition:color .3s}
+.c-links a:hover span{color:var(--acc)}
+@media(max-width:800px){.c-links{grid-template-columns:1fr 1fr}.hello{width:130px;height:130px;font-size:23px}}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:5vh 0;font-size:13px;color:var(--mute)}
+.foot .sign{font-family:var(--hand);font-size:22px;color:var(--body)}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1.2s cubic-bezier(.19,1,.22,1)}
+.rv.in{opacity:1;transform:none}
+.mag{display:inline-flex;transition:transform .35s cubic-bezier(.19,1,.22,1)}
+
+/* Phones */
+@media(max-width:700px){
+  nav{padding:18px 6vw}nav.scrolled{padding:14px 6vw}
+  .hero{min-height:560px}
+  .hero-copy{bottom:9vh;right:6vw}
+  .hero .kick{font-size:11px;line-height:1.6;margin-bottom:20px}
+  .hero h1{font-size:clamp(46px,14vw,84px)}
+  .hint{font-size:21px;margin-top:20px;max-width:28ch}
+  .hero-meta{top:92px;bottom:auto;left:6vw;right:auto;text-align:left;font-size:19px}
+  .hero-meta b{font-size:30px}
+  .story{padding:13vh 0 11vh}.story-grid{gap:44px}
+  .lit{font-size:clamp(26px,7.4vw,36px);margin-top:18px}
+  .portrait{max-width:440px;aspect-ratio:4/4.6}
+  .hz-in{padding:11vh 0 4vh}.hz-head{margin-bottom:4vh}
+  .hz-head h2,.journey h2{font-size:clamp(34px,9.5vw,48px)}
+  .track{gap:16px}
+  .cardx{padding:30px 26px;min-height:430px;border-radius:14px}
+  .cardx .top{font-size:11px}
+  .cardx h3{font-size:clamp(28px,8vw,38px);margin-top:14px}
+  .cardx .bottom{gap:18px;margin-top:30px}
+  .cardx .stat{font-size:clamp(50px,15vw,68px)}
+  .cardx .stat.sm{font-size:clamp(40px,11vw,52px)}
+  .cardx p{font-size:15px}
+  .cardx .bgword{font-size:clamp(110px,36vw,170px)}
+  .journey{padding:11vh 0 9vh}
+  .lead{font-size:16px}
+  .nl{margin-top:5vh}
+  .impact{padding:11vh 0 7vh}
+  .impact .lit{font-size:clamp(26px,7.6vw,38px)}
+  .origin p{font-size:21px}
+  .quote{padding:6vh 0 13vh}.quote .mark{font-size:90px}
+  .quote blockquote{font-size:clamp(24px,6.8vw,34px);margin-top:20px}
+  .quote cite{font-size:25px;margin-top:26px}
+  .contact{padding:13vh 0 0;border-radius:24px 24px 0 0}
+  .contact h2{font-size:clamp(46px,13vw,72px)}
+  .c-row{margin-top:6vh}
+  .c-links{grid-template-columns:1fr;margin-top:7vh}
+  .c-links a{padding:22px 0}
+  .foot{flex-direction:column;align-items:flex-start;padding:5vh 0 calc(5vh + env(safe-area-inset-bottom,0px))}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="logo">Manviya<span>.</span></a>
+  <div class="links">
+    <a href="#story">Story</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    <a href="Manviya_Rawat_CV.pdf" class="cv" target="_blank" rel="noopener">CV ↗</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <canvas id="plot" aria-label="Interactive graph: click to plot points and a curve is drawn through them"></canvas>
+  <div class="hero-copy">
+    <div class="kick">Mathematics · Education · Outreach — IIT Gandhinagar</div>
+    <h1><span class="ln"><span>I make maths</span></span><span class="ln"><span><em class="hl">hands-on.</em></span></span></h1>
+    <p class="hint" id="hint">Click anywhere to plot a point. I'll draw the curve. Double-click to start over.</p>
+  </div>
+  <div class="hero-meta"><b id="pts">0</b><span>points plotted</span></div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="kick">The story</div>
+      <p class="lit">I'm Manviya. I studied mathematics at the University of Delhi, cracked IIT JAM with AIR 316, and came to IIT Gandhinagar for my MSc. Now, at the Centre for Creative Learning, I take maths out of the textbook and into classrooms: into kits, worksheets and students' hands.</p>
+    </div>
+    <div class="rv">
+      <div class="portrait" id="portrait"><img src="manviya-profile.jpg" alt="Manviya Rawat at IIT Gandhinagar" onerror="document.getElementById('portrait').classList.add('noimg')"></div>
+      <p class="cap">Grades 6 to 12, one module at a time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hz" id="work">
+  <div class="hz-in">
+    <div class="hz-head">
+      <div><div class="kick">What I do</div><h2>Six ways I make <em>learning happen.</em></h2></div>
+      <div class="hz-count"><b id="hzNow">01</b> / 06</div>
+    </div>
+    <div class="track" id="track">
+      <article class="cardx c-blue">
+        <span class="bgword">Teach</span>
+        <div><div class="top"><span>01</span><span>Classrooms</span></div>
+        <h3>Maths that students can hold.</h3></div>
+        <div class="bottom">
+          <div><div class="stat">6–8</div><div class="statl">grades I teach live across partner schools</div></div>
+          <p>I field-test STEM learning kits and maths modules in real classrooms, and support teacher training sessions and product demonstrations.</p>
+        </div>
+      </article>
+      <article class="cardx c-paper">
+        <span class="bgword">Build</span>
+        <div><div class="top"><span>02</span><span>Curriculum</span></div>
+        <h3>Modules shaped by the classroom.</h3></div>
+        <div class="bottom">
+          <div><div class="stat">6–12</div><div class="statl">grades covered by the hands-on maths modules I develop</div></div>
+          <p>I gather structured feedback from students and teachers and turn it into clear recommendations for the curriculum and product teams.</p>
+        </div>
+      </article>
+      <article class="cardx c-yellow">
+        <span class="bgword">Write</span>
+        <div><div class="top"><span>03</span><span>Documentation</span></div>
+        <h3>Ready to use on day one.</h3></div>
+        <div class="bottom">
+          <div><div class="stat">4</div><div class="statl">kinds of material: manuals, worksheets, decks and articles</div></div>
+          <p>Everything a school needs to run a programme, plus an organised resource repository so the centre's work is easy to find and reuse.</p>
+        </div>
+      </article>
+      <article class="cardx c-mint">
+        <span class="bgword">Reach</span>
+        <div><div class="top"><span>04</span><span>Alumni outreach</span></div>
+        <h3>One conversation at a time.</h3></div>
+        <div class="bottom">
+          <div><div class="stat">700+</div><div class="statl">alumni reached by phone and LinkedIn</div></div>
+          <p>With the Alumni Relations Office, I verified and updated alumni records, making the database IITGN uses for engagement more accurate.</p>
+        </div>
+      </article>
+      <article class="cardx c-coral">
+        <span class="bgword">Give</span>
+        <div><div class="top"><span>05</span><span>Fundraising</span></div>
+        <h3>Asking alumni to give back.</h3></div>
+        <div class="bottom">
+          <div><div class="stat sm">Target met</div><div class="statl">fundraising campaign, March 2025</div></div>
+          <p>I led donor outreach to alumni by phone and LinkedIn, and handled logistics and follow-ups on a short, intensive timeline.</p>
+        </div>
+      </article>
+      <article class="cardx c-grid">
+        <span class="bgword">Gather</span>
+        <div><div class="top"><span>06</span><span>Events</span></div>
+        <h3>Making big days run smoothly.</h3></div>
+        <div class="bottom">
+          <div><div class="stat">2</div><div class="statl">flagship alumni events: Udaan Farewell and Homecoming 2025</div></div>
+          <p>On-ground logistics, alumni cards handed to the graduating batch, and careful distribution logs so nothing was missed.</p>
+        </div>
+      </article>
+    </div>
+    <div class="hz-bar"><i id="hzBar"></i></div>
+  </div>
+</section>
+
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="j-head">
+      <div><div class="kick rv">The journey</div><h2 class="rv">My <em>number line.</em></h2></div>
+      <p class="lead rv">Every point on it taught me something: from Kendriya Vidyalaya to IIT Gandhinagar, and from learning maths to teaching it.</p>
+    </div>
+    <div class="nl">
+      <div class="nl-line"><i id="nlFill"></i></div>
+      <ol class="nl-list">
+        <li class="up"><span class="dot"></span><div class="txt"><div class="yr">2019</div><h4>Class X</h4><p>Kendriya Vidyalaya Saurkhand</p><span class="g">94.2%</span></div></li>
+        <li class="down"><span class="dot"></span><div class="txt"><div class="yr">2021</div><h4>Class XII, PCM</h4><p>Kendriya Vidyalaya Saurkhand</p><span class="g">96%</span></div></li>
+        <li class="up"><span class="dot"></span><div class="txt"><div class="yr">2021–24</div><h4>BSc Mathematics</h4><p>University of Delhi</p><span class="g">8.78 CPI</span></div></li>
+        <li class="down"><span class="dot"></span><div class="txt"><div class="yr">2024</div><h4>IIT JAM</h4><p>Into IIT Gandhinagar. GATE Maths and NDA written also cleared.</p><span class="g">AIR 316</span></div></li>
+        <li class="up"><span class="dot"></span><div class="txt"><div class="yr">2024–26</div><h4>MSc Mathematics, IITGN</h4><p>Plus a Certificate of Teaching and tutoring with UMEED</p><span class="g">8.39 CPI</span></div></li>
+        <li class="down"><span class="dot"></span><div class="txt"><div class="yr">2025–26</div><h4>Alumni Relations Office</h4><p>Fundraising, alumni database, Udaan and Homecoming</p><span class="g">700+ alumni</span></div></li>
+        <li class="up"><span class="dot"></span><div class="txt"><div class="yr">2026</div><h4>Program Assistant, CCL</h4><p>Centre for Creative Learning, IIT Gandhinagar</p><span class="g">Now →</span></div></li>
+      </ol>
+    </div>
+    <p class="note" id="nlHint">Hover a point to look closer</p>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="wrap">
+    <div class="kick">So far</div>
+    <p class="lit">That's maths modules for <b class="n">Grades 6–12</b>, live classes for <b class="n">Grades 6–8</b>, <b class="n">700+</b> alumni reached, <b class="n">2</b> flagship alumni events, a fundraising campaign that met its target, and <b class="n">AIR 316</b> in IIT JAM along the way.</p>
+  </div>
+</section>
+
+<section class="origin">
+  <div class="wrap"><p class="rv">Where it started: teaching the children of construction workers on our own campus with UMEED–NYASA, 2024.</p></div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <span class="mark rv">&ldquo;</span>
+    <blockquote class="rv">A child hasn't learned a concept until they can hold it, test it, and explain it back to you.</blockquote>
+    <cite class="rv">— Manviya Rawat</cite>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kick">Contact</div>
+    <h2>Let's make maths <em>make sense.</em></h2>
+    <div class="c-row"><span class="rule"></span><a class="hello mag" href="mailto:manviya.rawat@alumni.iitgn.ac.in">Say hello</a></div>
+    <div class="c-links">
+      <a href="mailto:manviya.rawat@alumni.iitgn.ac.in"><small>Email</small><span>manviya.rawat@alumni.iitgn.ac.in</span></a>
+      <a href="tel:+916395800475"><small>Phone</small><span>+91 63958 00475</span></a>
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE/" target="_blank" rel="noopener"><small>LinkedIn</small><span>Connect ↗</span></a>
+      <a href="Manviya_Rawat_CV.pdf" target="_blank" rel="noopener"><small>CV</small><span>Download ↗</span></a>
+    </div>
+    <div class="foot"><span>© 2026 Manviya Rawat</span><span class="sign">Drawn on graph paper. Q.E.D.</span></div>
+  </div>
+</section>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const touch = matchMedia('(hover: none)').matches;
+const dpr = Math.min(devicePixelRatio || 1, 2);
+const clamp = v => Math.min(Math.max(v, 0), 1);
+requestAnimationFrame(() => setTimeout(() => document.body.classList.add('ready'), 80));
+
+/* Hero: plot points, get a curve */
+(function(){
+  const c = document.getElementById('plot'), x = c.getContext('2d');
+  const out = document.getElementById('pts'), hint = document.getElementById('hint');
+  if (touch) hint.textContent = 'Tap the grid to plot a point. Watch the curve bend to fit.';
+  const baseHint = hint.textContent;
+  let W, H, G, ox, oy, pts = [], mouse = null, lastW = 0, hintT = null, auto = null;
+
+  function init(){
+    lastW = c.clientWidth;
+    W = c.width = c.clientWidth * dpr; H = c.height = c.clientHeight * dpr;
+    const small = innerWidth < 700;
+    G = (small ? 30 : 44) * dpr;
+    ox = Math.round((small ? .5 : .62) * W / G) * G;
+    oy = Math.round(.42 * H / G) * G;
+  }
+  const toPx = p => [ox + p.u * G, oy - p.v * G];
+  const snap = v => Math.round(v * 2) / 2;
+  const fmt = n => String(Math.round(n * 10) / 10).replace('-', '−');
+  function say(t){ hint.textContent = t; clearTimeout(hintT); hintT = setTimeout(() => hint.textContent = baseHint, 2800); }
+  function add(u, v){
+    const i = pts.findIndex(p => p.u === u);
+    if (i >= 0){ pts[i].v = v; return false; }
+    pts.push({u, v}); pts.sort((a, b) => a.u - b.u); return true;
+  }
+  function plot(px, py){
+    if (!add(snap((px - ox) / G), snap((oy - py) / G))) say('One x, one y. That’s what makes it a function.');
+    out.textContent = pts.length;
+  }
+  function stopAuto(){ if (auto){ clearInterval(auto); auto = null; } }
+  const pos = e => { const r = c.getBoundingClientRect(); return [(e.clientX - r.left) * dpr, (e.clientY - r.top) * dpr]; };
+
+  init();
+  addEventListener('resize', () => { if (c.clientWidth !== lastW) init(); });
+  c.addEventListener('pointerdown', e => { stopAuto(); const [a, b] = pos(e); plot(a, b); });
+  c.addEventListener('dblclick', () => { pts = []; out.textContent = 0; say('Clean slate. Plot again.'); });
+  if (!touch){
+    c.addEventListener('pointermove', e => { const [a, b] = pos(e); mouse = {x: a, y: b}; });
+    c.addEventListener('pointerleave', () => mouse = null);
+  } else {
+    const demo = [-6, -4, -2, 0, 2, 4, 6]; let k = 0;
+    const step = () => { if (k >= demo.length){ stopAuto(); return; } const u = demo[k++]; add(u, snap(2 * Math.sin(u / 1.6))); out.textContent = pts.length; };
+    if (reduce) demo.forEach(step); else auto = setInterval(step, 700);
+  }
+
+  function draw(){
+    x.clearRect(0, 0, W, H);
+    x.lineWidth = 1; x.strokeStyle = 'rgba(43,89,195,.08)';
+    x.beginPath();
+    for (let gx = ox % G; gx < W; gx += G){ x.moveTo(gx, 0); x.lineTo(gx, H); }
+    for (let gy = oy % G; gy < H; gy += G){ x.moveTo(0, gy); x.lineTo(W, gy); }
+    x.stroke();
+    x.strokeStyle = 'rgba(22,33,58,.28)'; x.lineWidth = 1.2 * dpr;
+    x.beginPath(); x.moveTo(0, oy); x.lineTo(W, oy); x.moveTo(ox, 0); x.lineTo(ox, H); x.stroke();
+
+    x.font = (11 * dpr) + 'px Inter, sans-serif'; x.fillStyle = 'rgba(22,33,58,.35)';
+    x.textAlign = 'center';
+    for (let u = Math.ceil(-ox / G); ox + u * G < W; u++){ if (u === 0 || u % 2) continue; x.fillText(fmt(u), ox + u * G, oy + 16 * dpr); }
+    x.textAlign = 'right';
+    for (let v = Math.ceil((oy - H) / G); oy - v * G > 0; v++){ if (v === 0 || v % 2) continue; x.fillText(fmt(v), ox - 8 * dpr, oy - v * G + 4 * dpr); }
+
+    if (pts.length > 1){
+      const P = pts.map(toPx);
+      x.strokeStyle = '#2b59c3'; x.lineWidth = 2.6 * dpr; x.lineJoin = 'round'; x.lineCap = 'round';
+      x.beginPath(); x.moveTo(P[0][0], P[0][1]);
+      for (let i = 0; i < P.length - 1; i++){
+        const p0 = P[i - 1] || P[i], p1 = P[i], p2 = P[i + 1], p3 = P[i + 2] || p2;
+        x.bezierCurveTo(p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6,
+                        p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6, p2[0], p2[1]);
+      }
+      x.stroke();
+    }
+
+    x.textAlign = 'left'; x.font = (19 * dpr) + "px 'Caveat', cursive";
+    pts.forEach(p => {
+      const [a, b] = toPx(p);
+      x.fillStyle = '#e2603f'; x.beginPath(); x.arc(a, b, 5 * dpr, 0, 7); x.fill();
+      x.fillStyle = 'rgba(22,33,58,.7)'; x.fillText('(' + fmt(p.u) + ', ' + fmt(p.v) + ')', a + 9 * dpr, b - 9 * dpr);
+    });
+
+    if (mouse){
+      const u = snap((mouse.x - ox) / G), v = snap((oy - mouse.y) / G), a = ox + u * G, b = oy - v * G;
+      x.setLineDash([4 * dpr, 5 * dpr]); x.strokeStyle = 'rgba(43,89,195,.45)'; x.lineWidth = 1 * dpr;
+      x.beginPath(); x.moveTo(a, b); x.lineTo(a, oy); x.moveTo(a, b); x.lineTo(ox, b); x.stroke(); x.setLineDash([]);
+      x.strokeStyle = '#2b59c3'; x.lineWidth = 1.5 * dpr; x.beginPath(); x.arc(a, b, 7 * dpr, 0, 7); x.stroke();
+      const t = '(' + fmt(u) + ', ' + fmt(v) + ')', tw = x.measureText(t).width;
+      x.fillStyle = '#2b59c3'; x.fillText(t, a + 14 * dpr + tw > W ? a - tw - 12 * dpr : a + 12 * dpr, b + 24 * dpr);
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+
+/* Scroll-lit paragraphs */
+const litBlocks = [...document.querySelectorAll('.lit')].map(el => {
+  const nodes = [...el.childNodes]; el.innerHTML = '';
+  nodes.forEach(nd => {
+    if (nd.nodeType === 3) nd.textContent.split(/(\s+)/).forEach(w => {
+      if (!w) return;
+      if (/^\s+$/.test(w)) el.appendChild(document.createTextNode(w));
+      else { const s = document.createElement('span'); s.textContent = w; el.appendChild(s); }
+    });
+    else { const s = document.createElement('span'); s.appendChild(nd); el.appendChild(s); }
+  });
+  return {el, spans: el.querySelectorAll(':scope > span')};
+});
+
+/* Horizontal pinned section */
+const hz = document.querySelector('.hz'), track = document.getElementById('track');
+const hzBar = document.getElementById('hzBar'), hzNow = document.getElementById('hzNow');
+let hzDist = 0;
+function sizeHz(){
+  if (innerWidth <= 800){ hz.style.height = 'auto'; track.style.transform = ''; hzDist = 0; return; }
+  hzDist = track.scrollWidth - innerWidth;
+  hz.style.height = (innerHeight + hzDist) + 'px';
+}
+
+/* Number line */
+const nl = document.querySelector('.nl'), nlFill = document.getElementById('nlFill');
+const nlItems = [...document.querySelectorAll('.nl-list li')];
+if (touch) document.getElementById('nlHint').textContent = 'Scroll to walk the line';
+
+/* Scroll handler */
+const nav = document.getElementById('nav');
+function onScroll(){
+  const vh = innerHeight;
+  nav.classList.toggle('scrolled', scrollY > 40);
+
+  litBlocks.forEach(({el, spans}) => {
+    const r = el.getBoundingClientRect();
+    const p = reduce ? 1 : clamp((vh * .85 - r.top) / (r.height + vh * .4));
+    spans.forEach((s, i) => s.classList.toggle('on', i < p * spans.length));
+  });
+
+  if (hzDist > 0){
+    const r = hz.getBoundingClientRect();
+    const p = clamp(-r.top / (r.height - vh));
+    track.style.transform = `translate3d(${-p * hzDist}px,0,0)`;
+    hzBar.style.width = (p * 100) + '%';
+    hzNow.textContent = String(Math.min(6, Math.floor(p * 6) + 1)).padStart(2, '0');
+  }
+
+  const mob = innerWidth <= 800, nr = nl.getBoundingClientRect();
+  const np = reduce ? 1 : mob ? clamp((vh * .7 - nr.top) / nr.height) : clamp((vh * .9 - nr.top) / (vh * .6));
+  if (mob){ nlFill.style.height = (np * 100) + '%'; nlFill.style.width = ''; }
+  else { nlFill.style.width = (np * 100) + '%'; nlFill.style.height = ''; }
+  nlItems.forEach((li, i) => li.classList.toggle('on', i / nlItems.length <= np - .02 || np >= 1));
+}
+addEventListener('resize', () => { sizeHz(); onScroll(); });
+addEventListener('scroll', onScroll, {passive: true});
+addEventListener('load', () => { sizeHz(); onScroll(); });
+sizeHz(); onScroll();
+
+/* Reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* Magnetic button (desktop only) */
+if (!touch) document.querySelectorAll('.mag').forEach(el => {
+  el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .35}px,${(e.clientY - r.top - r.height / 2) * .35}px)`; });
+  el.addEventListener('pointerleave', () => el.style.transform = '');
+});
+</script>
+</body>
+</html>
